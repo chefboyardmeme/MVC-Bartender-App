@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <h1 class="display-4">Drink Menu</h1>
+    
+@foreach (var drink in Model)
+{
+    <div>
+        
+        <h2>
+            <strong>@drink.Name</strong>
+            <span>$@drink.Price.ToString()</span>
+        </h2>
+
+        <span class="lead">@drink.Description</span>
+
+        <div>
+          
+            <span class="btn-lg btn-default">@Html.ActionLink("Order Drink", "Order", "Home", (Drink)drink, null)</span>
+           
+        </div>
+
+        
+
+    </div>
+}
